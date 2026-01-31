@@ -116,3 +116,18 @@ body::after {
   transform: translateY(-15px) scale(1.05);
   box-shadow: 0 40px 80px rgba(0,0,0,.25);
 }
+body {
+  cursor: none;
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00ffcc;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: 0.08s ease;
+  z-index: 9999;
+}
