@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg,#fff3e0,#e8f5e9);
+  overflow-x: hidden;
+}
+
+/* 🍉 Frutas decorativas */
+body::before, body::after {
+  content: "";
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+body::before {
+  top: -80px;
+  left: -80px;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/415/415733.png"); /* fresa */
+}
+
+body::after {
+  bottom: -80px;
+  right: -80px;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/415/415682.png"); /* limón */
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #2e7d32;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #555;
+}
+
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 40px;
+  padding: 40px;
+}
+
+/* 🧃 Cards */
+.card {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(12px);
+  border-radius: 30px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0,0,0,.15);
+  transform: translateY(60px) scale(.95);
+  opacity: 0;
+  transition: all .8s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
+  content: "🍊";
+  position: absolute;
+  font-size: 60px;
+  top: -20px;
+  right: -20px;
+  opacity: .15;
+}
+
+.card.visible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 25px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card span {
+  display: inline-block;
+  background: linear-gradient(135deg,#43a047,#2e7d32);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* ✨ Hover */
+.card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 40px 80px rgba(0,0,0,.25);
+}
